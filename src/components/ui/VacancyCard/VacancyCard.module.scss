@@ -1,0 +1,75 @@
+.vacancyCard {
+  background-color: #fff;
+  border: 1px solid #e8dced;
+  border-radius: 20px;
+  width: 216px;
+  height: 255px;
+  overflow: hidden;
+  text-align: left;
+  padding: 15px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  min-width: 216px;
+  flex: 1;
+  max-width: calc(20% - 20px);
+
+  .vacancyCardTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  h3 {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #00365c;
+  }
+
+  .postedDate {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 120%;
+    color: #000;
+  }
+
+  .star {
+    width: 22px;
+    height: 21px;
+  }
+
+  .description {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    color: #3b4043;
+  }
+
+  .contractType {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    color: #000;
+  }
+
+  .salaryRange {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000;
+  }
+
+  .footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+}

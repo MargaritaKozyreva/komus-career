@@ -1,0 +1,97 @@
+.vacancyPage {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+
+  .infoText {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #000;
+
+    .infoTitle {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      text-align: right;
+      color: #9b9b9b;
+    }
+  }
+
+  .divider {
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      display: inline-block;
+      margin-bottom: 60px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    .actions {
+      display: flex;
+      gap: 15px;
+
+      a {
+        color: #ffcb13;
+        text-decoration: none;
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .sections {
+    margin-top: 60px;
+  }
+
+  .details,
+  .requirements,
+  .additionalInfo {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+  }
+
+  .applyButton {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ffcb13;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #e09000;
+    }
+  }
+}

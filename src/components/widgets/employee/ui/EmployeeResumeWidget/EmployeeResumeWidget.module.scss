@@ -1,0 +1,98 @@
+.previewContainer {
+    display: flex;
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .sidebar {
+    min-width: 350px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 5px;
+  }
+  
+  .mainContent {
+    flex-grow: 1;
+    margin-left: 20px;
+    width: 100%;
+  }
+  
+  .experienceBlock,
+  .educationBlock {
+    margin-bottom: 20px;
+  }
+  
+  .experienceBlockUl {
+    text-decoration: none;
+  }
+  
+  .experienceBlock h4,
+  .educationBlock h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .experienceBlock p,
+  .educationBlock p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    gap: 20px;
+  }
+  
+  .buttonAction {
+    background-color: #fff;
+    color: #555;
+  }
+  .buttonAction:hover {
+    background-color: #fff;
+    color: #555 !important;
+    border: 1px solid #ffbd13 !important;
+  }
+  
+  .buttonActionNext {
+    background: #ffbd13 !important;
+  }
+  

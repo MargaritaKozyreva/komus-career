@@ -1,0 +1,63 @@
+.container {
+  td {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000;
+    padding: 15px;
+    border-bottom: 1px solid #dfdfdf;
+    width: 326px;
+    height: 0px;
+
+    .posted {
+      font-family: var(--font-family);
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 145%;
+      color: #000;
+    }
+
+    .position {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 120%;
+      color: #00365c;
+    }
+    .fullname {
+      font-family: var(--font-family);
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 100%;
+      color: #000;
+    }
+
+    .description {
+      font-family: var(--font-family);
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 100%;
+      color: #000;
+    }
+
+    .avatar {
+      border-radius: 5px;
+      width: 58px;
+      height: 57px;
+    }
+  }
+
+  .title {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #00365c;
+  }
+
+  .star {
+    width: 22px;
+    height: 21px;
+  }
+}

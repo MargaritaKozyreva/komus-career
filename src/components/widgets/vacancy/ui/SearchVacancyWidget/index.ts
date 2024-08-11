@@ -1,0 +1,1 @@
+export { SearchVacancyWidget } from './SearchVacancyWidget'

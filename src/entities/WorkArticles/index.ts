@@ -1,0 +1,1 @@
+export * as workArticlesModel from "./model";

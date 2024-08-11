@@ -1,0 +1,18 @@
+<svg width="131" height="131" viewBox="0 0 131 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<circle opacity="0.2" cx="65.5" cy="65.5" r="65.5" transform="matrix(1 0 0 -1 0 131)" fill="url(#paint0_radial_80_2)" />
+	<path d="M75.6667 88.3333C75.6667 92.7422 78.3689 96.5822 82.2089 98.1467C81.0711 98.7156 79.9333 99 78.6533 99H40.68C36.4133 99 33 95.5867 33 91.32V42.68C33 38.4133 36.4133 35 40.68 35H70.4044V51.0711H86.4756V77.6667C80.5022 77.6667 75.6667 82.5022 75.6667 88.3333Z" fill="white" stroke="#A280B4" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<path d="M86.3333 51.0711H70.4044V35L86.3333 51.0711Z" fill="white" stroke="#A280B4" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<path d="M43.6667 56.3333H65" stroke="#A280B4" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<path d="M43.6667 67H70.4044" stroke="#A280B4" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<path d="M43.6667 77.6667H70.4044" stroke="#A280B4" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<path d="M43.6667 88.3333H70.4044" stroke="#A280B4" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<path d="M97 88.3334C97 94.1645 92.1644 99 86.3333 99C84.9111 99 83.4889 98.7156 82.2089 98.1467C78.3689 96.5822 75.6667 92.7422 75.6667 88.3334C75.6667 82.5022 80.5022 77.6667 86.3333 77.6667C92.1644 77.6667 97 82.5022 97 88.3334Z" fill="white" stroke="#A280B4" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<path d="M81.7822 89.3289L83.7733 93.5955L91.0266 86.4844" fill="white" />
+	<path d="M81.7822 89.3289L83.7733 93.5955L91.0266 86.4844" stroke="#A280B4" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<defs>
+		<radialGradient id="paint0_radial_80_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(65.7079 65.7079) rotate(90.1897) scale(62.7972)">
+			<stop stop-color="#8C00CE" />
+			<stop offset="1" stop-color="#8C00CE" stop-opacity="0" />
+		</radialGradient>
+	</defs>
+</svg>

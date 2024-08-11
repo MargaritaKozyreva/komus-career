@@ -1,0 +1,1 @@
+export { VacancyWidget } from "./VacancyWidget";

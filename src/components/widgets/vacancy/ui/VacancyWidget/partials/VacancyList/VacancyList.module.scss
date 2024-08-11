@@ -1,0 +1,22 @@
+.thead {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 100%;
+  color: #9b9b9b;
+}
+.vacancyTable {
+    width: 100%; /* Пример ширины таблицы, можете настроить под свои нужды */
+    border-collapse: collapse; /* Убираем отступы между ячейками */
+  }
+  
+  .vacancyTable td,
+  .vacancyTable th {
+
+    padding: 8px; /* Пример отступа внутри ячеек, можете настроить под свои нужды */
+  }
+  
+  /* Убираем стандартные отступы и добавляем стили, если нужно */
+  .vacancyTable th {
+    text-align: left; /* Выравнивание текста заголовков */
+  }

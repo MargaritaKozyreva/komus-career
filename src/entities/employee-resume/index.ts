@@ -1,0 +1,1 @@
+export * as employeeResumeModel from "./model";

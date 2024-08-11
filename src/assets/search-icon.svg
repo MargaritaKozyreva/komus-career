@@ -1,0 +1,11 @@
+<svg width="113" height="113" viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<circle opacity="0.2" cx="56.5" cy="56.5" r="56.5" transform="matrix(1 0 0 -1 0 113)" fill="url(#paint0_radial_80_2)" />
+	<path d="M48.6873 71.4723C46.8111 70.43 44.9349 69.1792 43.2671 67.7199C41.5993 66.0521 40.3485 64.1759 39.5147 62.2997C35.7622 55.0033 37.2215 45.8306 43.2671 39.785C50.9805 32.0717 63.2801 32.0717 70.9935 39.785C78.7068 47.4984 78.7068 59.798 70.9935 67.5114C64.9479 73.557 55.7752 75.0163 48.6873 71.4723Z" fill="white" stroke="#FFB800" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<path d="M26.1726 93.9869L17 84.8143L27.4234 74.3909L39.3062 62.5081C40.3485 64.3843 41.5993 66.2606 43.0586 67.9283C44.7264 69.5961 46.6026 70.8469 48.4788 71.6808L36.5961 83.5635L26.1726 93.9869Z" fill="white" stroke="#FFB800" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+	<defs>
+		<radialGradient id="paint0_radial_80_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(56.6794 56.6794) rotate(90) scale(56.3206)">
+			<stop stop-color="#FFB600" />
+			<stop offset="1" stop-color="#F6B920" stop-opacity="0" />
+		</radialGradient>
+	</defs>
+</svg>

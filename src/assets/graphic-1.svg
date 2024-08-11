@@ -1,0 +1,13 @@
+<svg width="157" height="158" viewBox="0 0 157 158" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<g style="mix-blend-mode:multiply">
+		<circle cx="60.5" cy="97.5" r="50" stroke="#DFDFDF" />
+	</g>
+	<g style="mix-blend-mode:multiply">
+		<circle cx="133.5" cy="23.5" r="23" stroke="#DFDFDF" />
+	</g>
+	<g style="mix-blend-mode:multiply">
+		<circle cx="95.5" cy="62.5" r="15" stroke="#DFDFDF" />
+	</g>
+	<line x1="6.64645" y1="149.646" x2="133.646" y2="22.6464" stroke="#D9D9D9" />
+	<line x1="119.646" y1="157.354" x2="0.64645" y2="38.3536" stroke="#D9D9D9" />
+</svg>

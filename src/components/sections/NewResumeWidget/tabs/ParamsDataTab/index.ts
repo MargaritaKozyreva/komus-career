@@ -1,0 +1,1 @@
+export { ParamsDataTab } from "./ParamsDataTab";

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  .thead {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 100%;
+    color: #9b9b9b;
+  }
+  .candidateTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .candidateTable td,
+  .candidateTable th {
+    padding: 8px;
+  }
+
+  .candidateTable th {
+    text-align: left;
+  }
+}

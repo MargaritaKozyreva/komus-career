@@ -1,0 +1,72 @@
+$primary-color: #333;
+$text-hover: #007bff;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .cabinet {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+  }
+
+  .banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin-bottom: 180px;
+
+    img.women1 {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: 486px;
+    height: 171px;
+  }
+
+  .navigation {
+    ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    li {
+      padding: 5px 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $text-hover;
+      }
+    }
+  }
+}

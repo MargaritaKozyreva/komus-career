@@ -1,0 +1,1 @@
+export * as employeeVacancyModel from "./model";

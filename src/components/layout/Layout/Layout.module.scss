@@ -1,0 +1,29 @@
+.root {
+    min-height: 100vh;
+    padding: 0px 45px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    max-width: 1440px;
+    animation: fadeIn 0.15s ease-in-out forwards;
+    z-index: 999;
+    position: relative;
+}
+
+.page {
+    max-width: 980px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .root {
+        padding: 32px 16px;
+    }
+}

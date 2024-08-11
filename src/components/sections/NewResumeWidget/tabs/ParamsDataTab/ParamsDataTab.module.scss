@@ -1,0 +1,27 @@
+.form {
+  /* другие стили формы */
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.wrap{
+  display: flex;
+}
+
+.radioOption {
+  margin-bottom: 15px;
+}
+
+.radioDescription {
+  font-size: 14px;
+  color: #888;
+  margin-left: 24px; /* чтобы текст не заходил под радиокнопку */
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}

@@ -1,0 +1,1 @@
+export { WishesDataTab } from "./WishesDataTab";
