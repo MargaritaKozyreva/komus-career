@@ -1,4 +1,4 @@
-// components/ToggleView.tsx
+
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../../state/store";

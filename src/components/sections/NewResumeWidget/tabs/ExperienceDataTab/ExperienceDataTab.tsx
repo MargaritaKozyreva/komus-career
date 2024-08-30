@@ -1,6 +1,6 @@
 import { useFormik, FormikProvider, FieldArray } from "formik";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+
 import { experienceDataModel } from "../../../../../entities/NewResume";
 import { AppDispatch } from "../../../../../state/store";
 import { NewResumeExperienceDataType } from "../../../../../types/newResume";
@@ -25,13 +25,23 @@ import { useResume } from "../../../../../entities/NewResume/ResumeContext";
 moment.locale("ru");
 
 type ExperienceDataTabProps = {
-  handleGoBack: () => void;
+  onNext: () => void;
+  onPrevious: () => void;
 };
 
-export const ExperienceDataTab: React.FC<ExperienceDataTabProps> = (props) => {
+export const ExperienceDataTab: React.FC<ExperienceDataTabProps> = ({
+  onNext,
+  onPrevious,
+}) => {
   const dispatch: AppDispatch = useDispatch();
-  const navigate = useNavigate();
-  const resumeContext = useResume(); // Use the context hook
+  const resumeContext = useResume(); 
+
+  const convertToMoment = (date: { month: string; year: string }) => {
+    if (date.month && date.year) {
+      return moment(`${date.month}-${date.year}`, "MM-YYYY");
+    }
+    return null;
+  };
 
   const formik = useFormik<NewResumeExperienceDataType>({
     initialValues: resumeContext
@@ -81,7 +91,7 @@ export const ExperienceDataTab: React.FC<ExperienceDataTabProps> = (props) => {
           experienceData: formattedValues,
         }));
       }
-      navigate("/create-resume/skills");
+      onNext();
     },
   });
 
@@ -169,17 +179,24 @@ export const ExperienceDataTab: React.FC<ExperienceDataTabProps> = (props) => {
                     <label htmlFor={`experiences.${index}.startDate`}>
                       Период работы с:
                     </label>
-                    <DatePicker.MonthPicker
-                      id={`experiences[${index}].startDate`}
-                      name={`experiences[${index}].startDate`}
-                      format="MM.YYYY"
-                      onChange={(date) =>
-                        handleDateChange(
-                          `experiences[${index}].startDate`,
-                          date
-                        )
-                      }
-                    />
+
+                    <div className={styles.pickerWrapper}>
+                      <span className={styles.workPeriod}>
+                        Выбрано - {experience.startDate.month}.
+                        {experience.startDate.year}
+                      </span>
+                      <DatePicker.MonthPicker
+                        id={`experiences[${index}].startDate`}
+                        name={`experiences[${index}].startDate`}
+                        format="MM.YYYY"
+                        onChange={(date) =>
+                          handleDateChange(
+                            `experiences[${index}].startDate`,
+                            date
+                          )
+                        }
+                      />
+                    </div>
 
                     <Checkbox
                       name={`experiences[${index}].isCurrent`}
@@ -202,17 +219,24 @@ export const ExperienceDataTab: React.FC<ExperienceDataTabProps> = (props) => {
                         <label htmlFor={`experiences.${index}.endDate.month`}>
                           по:
                         </label>
-                        <DatePicker.MonthPicker
-                          id={`experiences[${index}].endDate`}
-                          name={`experiences[${index}].endDate`}
-                          format="MM.YYYY"
-                          onChange={(date) =>
-                            handleDateChange(
-                              `experiences[${index}].endDate`,
-                              date
-                            )
-                          }
-                        />
+
+                        <div className={styles.pickerWrapper}>
+                          <span className={styles.workPeriod}>
+                            Выбрано - {experience.endDate.month}.
+                            {experience.endDate.year}
+                          </span>
+                          <DatePicker.MonthPicker
+                            id={`experiences[${index}].endDate`}
+                            name={`experiences[${index}].endDate`}
+                            format="MM.YYYY"
+                            onChange={(date) =>
+                              handleDateChange(
+                                `experiences[${index}].endDate`,
+                                date
+                              )
+                            }
+                          />
+                        </div>
                       </div>
                     </>
                   )}
@@ -290,9 +314,7 @@ export const ExperienceDataTab: React.FC<ExperienceDataTabProps> = (props) => {
         />
 
         <div className={styles.formActions}>
-          <Button onClick={() => navigate("/create-resume/wishes")}>
-            Назад
-          </Button>
+          <Button onClick={onPrevious}>Назад</Button>
           <Button htmlType="submit">Продолжить</Button>
         </div>
       </form>

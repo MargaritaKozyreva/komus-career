@@ -12,10 +12,18 @@ import { useResume } from "../../../../../entities/NewResume/ResumeContext";
 
 const { Option } = Select;
 
-export const EducationDataTab: React.FC = () => {
+type EducationDataTabProps = {
+  onNext: () => void;
+  onPrevious: () => void;
+};
+
+export const EducationDataTab: React.FC<EducationDataTabProps> = ({
+  onNext,
+  onPrevious,
+}) => {
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
-  const resumeContext = useResume(); // Use the context hook
+  const resumeContext = useResume();
 
   const formik = useFormik({
     initialValues: resumeContext
@@ -41,7 +49,7 @@ export const EducationDataTab: React.FC = () => {
               educationData: values,
             }));
           }
-          navigate("/create-resume/params");
+          onNext();
         })
         .catch((error) => {
           console.error("Submission error", error);
@@ -146,9 +154,7 @@ export const EducationDataTab: React.FC = () => {
         </div>
 
         <div className={styles.formActions}>
-          <AntButton onClick={() => navigate("/create-resume/skills")}>
-            Назад
-          </AntButton>
+          <AntButton onClick={onPrevious}>Назад</AntButton>
           <AntButton htmlType="submit">Продолжить</AntButton>
         </div>
       </form>

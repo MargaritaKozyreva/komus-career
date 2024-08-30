@@ -15,7 +15,7 @@ const EmployeeResumesAndResponces = () => {
       <div className={styles.EmployeeResumesAndResponcesPageWrapper}>
         <div className={styles.tabs}>
           <NavLink
-            to={`/employee-resume-responce/my`}
+            to={`/employee-resume-responce/my-resumes`}
             className={({ isActive }) =>
               isActive ? cn(styles.tab, styles.activeTab) : styles.tab
             }
@@ -23,7 +23,7 @@ const EmployeeResumesAndResponces = () => {
             МОИ РЕЗЮМЕ
           </NavLink>
           <NavLink
-            to={`/employee-resume-responce/responces`}
+            to={`/employee-resume-responce/my-responces`}
             className={({ isActive }) =>
               isActive ? cn(styles.tab, styles.activeTab) : styles.tab
             }
@@ -34,8 +34,8 @@ const EmployeeResumesAndResponces = () => {
 
         <Routes>
           <Route index element={<EmployeeResumeListWidget />} />
-          <Route path="my" element={<EmployeeResumeListWidget />} />
-          <Route path="responces" element={<EmployeeVacancyesResponcesWidget />} />
+          <Route path="my-resumes" element={<EmployeeResumeListWidget />} />
+          <Route path="my-responces" element={<EmployeeVacancyesResponcesWidget />} />
         </Routes>
       </div>
     </div>

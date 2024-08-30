@@ -25,8 +25,8 @@ export const VacancyWidget: React.FC<VacancyWidgetProps> = ({
 
   useEffect(() => {
     dispatch(vacancyModel.actions.getVacancies({ page, limit, query }));
-  }, [dispatch]);
-
+  }, [dispatch, query]);
+  
   const vacancyesState = useSelector(
     (state: { vacancyes: vacancyModel.slices.VacancyState }) => state.vacancyes
   );
@@ -53,7 +53,7 @@ export const VacancyWidget: React.FC<VacancyWidgetProps> = ({
         isEmpty={vacancyesState.entity === null}
       >
         <div className={styles.widgetWrapperContainer}>
-          <h3 className={styles.widgetTitle}>ВАКАНСИИ ДНЯ</h3>
+          <h3 className={styles.widgetTitle}>ВАКАНСИИ</h3>
           <ToggleView widget="vacancies" />
           {content}
           <Pagination />

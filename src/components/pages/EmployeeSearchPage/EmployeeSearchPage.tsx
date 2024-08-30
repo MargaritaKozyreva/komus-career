@@ -11,7 +11,6 @@ export const EmployeeSearchPage = () => {
   const queryParam = useQuery();
   const searchQuery = queryParam.get('query');
 
-  // Приведение null к undefined, если searchQuery отсутствует
   const initialQuery = searchQuery || undefined;
 
   return (

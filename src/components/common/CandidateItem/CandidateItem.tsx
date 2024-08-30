@@ -7,6 +7,7 @@ import { AppDispatch, RootState } from "../../../state/store";
 import { useDispatch, useSelector } from "react-redux";
 import { candidatesModel } from "../../../entities/Candidates";
 import Spinner from "../../ui/Spinner";
+import { Link } from "react-router-dom";
 
 interface VacancyProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
@@ -33,7 +34,7 @@ const CandidateItem: React.FC<VacancyProps & { candidate: CandidateType }> = ({
         <p className={styles.avatar}>
           <img src={candidate.userAvatar} alt="avatar" />
         </p>
-        <p className={styles.position}>{candidate.userPositionName}</p>
+        <p className={styles.position}><Link to={`/employee-resume/${candidate.id}`}>{candidate.userPositionName}</Link></p>
         <p className={styles.fullname}>{candidate.userFullname}</p>
         <p className={styles.description}>{candidate.description}</p>
       </td>

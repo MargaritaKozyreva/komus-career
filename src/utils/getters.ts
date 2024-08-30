@@ -6,8 +6,8 @@ import {
   SalaryPeriod,
   Schedule,
 } from "../types/newResume";
+import { PersonalData } from "../types/employeeResume";
 
-// Getters for formatted data
 export const getFormattedPhone = (phone: string) => {
   const cleaned = ("" + phone).replace(/\D/g, "");
   const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
@@ -125,3 +125,8 @@ export const getScheduleLabel = (schedule: Schedule) => {
 export const formatSalary = (salary: number) => {
   return new Intl.NumberFormat("ru-RU").format(salary);
 };
+
+
+export const getPersonShortName = (person: PersonalData) => {
+  return `${person.firstName} ${person.lastName}`
+}

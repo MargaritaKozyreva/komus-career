@@ -12,7 +12,7 @@ import styles from "./CandidateWidget.module.scss";
 
 export type CandidateWidgetProps = {
   limit?: number;
-  searchQuery?: string; // Добавляем пропс для поискового запроса
+  searchQuery?: string;
 };
 
 export const CandidateWidget: React.FC<CandidateWidgetProps> = ({
@@ -23,7 +23,7 @@ export const CandidateWidget: React.FC<CandidateWidgetProps> = ({
 
   useEffect(() => {
     dispatch(candidatesModel.actions.getCandidates(searchQuery));
-  }, [dispatch, searchQuery]); // Добавление searchQuery в зависимости useEffect
+  }, [dispatch, searchQuery]);
 
   const candidatesState = useSelector(
     (state: { candidates: candidatesModel.slices.CandidatesState }) =>

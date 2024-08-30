@@ -33,6 +33,26 @@ export class VacancyData {
     );
     return data;
   }
+  applyForVacancy(payload: {
+    vacancyId: string;
+  }): ResponseResult<{success: boolean}> {
+    const data = httpService<{success: boolean}>(
+      "GET",
+      "apply_for_vacancy",
+      `vacancy_id=${payload.vacancyId}`
+    );
+    return data;
+  }
+  saveVacancy(payload: {
+    vacancy: any;
+  }): ResponseResult<{success: boolean}> {
+    const data = httpService<{success: boolean}>(
+      "GET",
+      "save_vacancy",
+      `vacancy=${payload.vacancy}`
+    );
+    return data;
+  }
   addVacancyInFavorite(payload: {
     vacancyId: string;
   }): ResponseResult<VacancyDataType> {

@@ -24,10 +24,18 @@ import { useResume } from "../../../../../entities/NewResume/ResumeContext";
 
 const { Option } = Select;
 
-export const SkillsDataTab: React.FC = () => {
+type SkillsDataTabProps = {
+  onNext: () => void;
+  onPrevious: () => void;
+};
+
+export const SkillsDataTab: React.FC<SkillsDataTabProps> = ({
+  onNext,
+  onPrevious,
+}) => {
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
-  const resumeContext = useResume(); // Use the context hook
+  const resumeContext = useResume();
 
   const formik = useFormik<NewResumeSkillsDataType>({
     initialValues: resumeContext
@@ -54,7 +62,7 @@ export const SkillsDataTab: React.FC = () => {
               skillsData: values,
             }));
           }
-          navigate("/create-resume/education");
+          onNext();
         })
         .catch((error) => {
           console.error("Submission error", error);
@@ -224,8 +232,7 @@ export const SkillsDataTab: React.FC = () => {
               listType="picture"
               beforeUpload={() => false} // Предотвращаем автоматическую загрузку файла
               onChange={(info) => {
-
-                console.log( info.fileList)
+                console.log(info.fileList);
                 if (info.fileList.length > 0) {
                   // Обновляем поле формы с файлом
                   formik.setFieldValue("documents", info.fileList);
@@ -244,9 +251,7 @@ export const SkillsDataTab: React.FC = () => {
         </div>
 
         <div className={styles.formActions}>
-          <Button onClick={() => navigate("/create-resume/experience")}>
-            Назад
-          </Button>
+          <Button onClick={onPrevious}>Назад</Button>
           <Button htmlType="submit">Продолжить</Button>
         </div>
       </form>

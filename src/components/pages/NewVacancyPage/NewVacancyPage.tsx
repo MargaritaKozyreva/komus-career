@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import styles from "./VacancyPage.module.scss";
 import { withLayout } from "../../layout/Layout";
 
-export const Vacancy: React.FC = () => {
+export const NewVacancy: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [vacancyData, setVacancyData] = useState<VacancyDataType | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -140,4 +140,4 @@ export const Vacancy: React.FC = () => {
   );
 };
 
-export const VacancyPage = withLayout(Vacancy);
+export const NewVacancyPage = withLayout(NewVacancy);

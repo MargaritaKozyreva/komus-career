@@ -31,7 +31,9 @@ const VacancyItem: React.FC<VacancyProps & { vacancy: VacancyType }> = ({
     <tr className={styles.container}>
       <td>{vacancy.postedDate}</td>
       <td>
-        <p className={styles.title}><Link to={`/vacancy/${vacancy.id}`}>{vacancy.title}</Link></p>
+        <p className={styles.title}>
+          <Link to={`/vacancy/${vacancy.id}`}>{vacancy.title}</Link>
+        </p>
         <p>{vacancy.description}</p>
       </td>
       <td>{vacancy.contractType}</td>

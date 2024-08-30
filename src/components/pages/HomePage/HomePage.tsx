@@ -27,7 +27,7 @@ const HomePage = () => {
             icon={menIcon}
             title="Разместить резюме"
             description={[
-              { text: "Мои резюме и отклики", path: "/employee-resume-responce" },
+              { text: "Мои резюме и отклики", path: "/employee-resume-responce/my-resumes" },
               { text: "Составить резюме", path: "/create-resume" },
               { text: "Примеры резюме", path: "/resume-examples" },
             ]}

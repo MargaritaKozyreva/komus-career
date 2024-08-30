@@ -1,4 +1,3 @@
-// ResumePreview.tsx
 import React from "react";
 import { Button } from "@komus/design";
 import styles from "./EmployeeResumeWidget.module.scss";
@@ -17,6 +16,7 @@ import {
   getEmailLink,
   getFormattedPhone,
   getTelegramLink,
+  getPersonShortName,
 } from "../../../../../utils/getters";
 import { ResumeData } from "../../../../../types/employeeResume";
 import {
@@ -57,10 +57,10 @@ export const EmployeeResumeWidget: React.FC<Props> = ({
         <div className={styles.photo}>
           <img
             src={personalData.photo}
-            alt={`${personalData.firstName} ${personalData.lastName}`}
+            alt={getPersonShortName(personalData)}
           />
         </div>
-        <h2>{`${personalData.firstName} ${personalData.lastName}`}</h2>
+        <h2>{getPersonShortName(personalData)}</h2>
         {wishesData.position ? (
           <h3>
             <h2>{wishesData.position}</h2>

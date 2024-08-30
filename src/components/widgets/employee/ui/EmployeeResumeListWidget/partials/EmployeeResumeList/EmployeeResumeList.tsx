@@ -22,6 +22,7 @@ export const EmployeeResumeList: React.FC<Props> = ({ resumes, limit }) => {
         <table className={`${styles.vacancyTable}`}>
           <thead className={styles.thead}>
             <tr>
+              <th></th>
               <th>Резюме</th>
               <th>Статус</th>
             </tr>

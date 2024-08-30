@@ -19,6 +19,13 @@ export const store = configureStore({
     workArticles: workArticlesReducers,
     expertBlogs: expertBlogsReducers,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ["userSlice/getUserById/fulfilled"],
+        ignoredPaths: ["payload.headers"],
+      },
+    }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

@@ -11,6 +11,8 @@ import { employeeResumeModel } from "../../../entities/employee-resume";
 export const EmployeeResume: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
+  console.log(id)
+
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {

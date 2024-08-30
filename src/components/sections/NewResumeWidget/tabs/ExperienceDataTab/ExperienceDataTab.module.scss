@@ -15,6 +15,16 @@
     display: inline-block;
   }
 
+  .pickerWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .workPeriod{
+    font-size: 12px;
+    color: #797979;
+  }
+
   .totalDuration {
     width: 150px;
   }
@@ -110,7 +120,7 @@
   input[type="checkbox"]:focus,
   select:focus,
   textarea:focus {
-    box-shadow: 0 0 2px 0px #fda700 !important; /* Оранжевая тень при фокусе */
+    box-shadow: 0 0 2px 0px #fda700 !important;
     border-color: #fda700 !important;
   }
 }

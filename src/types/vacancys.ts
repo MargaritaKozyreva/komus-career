@@ -20,7 +20,7 @@ export type VacancyType = {
   region?: string;  // регион, например, "Россия"
   workSchedule?: string;  // график работы, например, "Полная занятость"
   hasProbation?: boolean;  // наличие испытательного срока
-  level?: string;  // уровень должности, например, "Менеджер по продажам"
+  level?: string;  // уровень должности, например, "Менеджер"
   specializations?: string;  // специализация, например, "PR"
   requirements?: VacancyRequirementsType;  // требования к кандидату
   additionalInfo?: string;  // дополнительная информация

@@ -6,7 +6,7 @@ import { DetailedHTMLProps, HTMLAttributes, useState, useEffect } from "react";
 interface SearchEmployeeWidgetProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   className?: string;
-  initialQuery?: string; // Определение пропса для начального запроса
+  initialQuery?: string;
 }
 
 export const SearchEmployeeWidget: React.FC<SearchEmployeeWidgetProps> = ({

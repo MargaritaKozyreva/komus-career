@@ -1,6 +1,5 @@
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { personalDataModel } from "../../../../../entities/NewResume";
 import { AppDispatch } from "../../../../../state/store";
 import {
@@ -17,10 +16,17 @@ import moment from "moment";
 import { uploadPhoto } from "../../../../../api/photoUpload";
 import { useEffect } from "react";
 
-export const PersonalDataTab: React.FC = (props) => {
+type PersonalDataTabProps = {
+  onNext: () => void;
+  onPrevious?: () => void;
+};
+
+export const PersonalDataTab: React.FC<PersonalDataTabProps> = ({
+  onNext,
+  onPrevious,
+}) => {
   const dispatch: AppDispatch = useDispatch();
-  const navigate = useNavigate();
-  const resumeContext = useResume(); // Use the context hook
+  const resumeContext = useResume(); 
 
   // Call the hook unconditionally
   const formik = useFormik({
@@ -48,7 +54,7 @@ export const PersonalDataTab: React.FC = (props) => {
     onSubmit: async (values, { setSubmitting }) => {
       const formattedValues = {
         ...values,
-        birthDate: moment(values.birthDate, "YYYY-MM-DD").format("YYYY-MM-DD"), // Преобразование даты в формат, подходящий для input[type="date"]
+        birthDate: moment(values.birthDate, "YYYY-MM-DD").format("YYYY-MM-DD"),
       };
       // Upload photo if it's a file object
       // if (
@@ -57,7 +63,7 @@ export const PersonalDataTab: React.FC = (props) => {
       //   "name" in values.photo
       // ) {
       //   try {
-      //     const photoURL = await uploadPhoto(values.photo); // Загрузите фото на сервер и получите URL
+      //     const photoURL = await uploadPhoto(values.photo);
       //     values.photo = photoURL;
       //   } catch (error) {
       //     console.error("Photo upload error:", error);
@@ -79,7 +85,7 @@ export const PersonalDataTab: React.FC = (props) => {
               personalData: formattedValues,
             }));
           }
-          navigate("/create-resume/wishes");
+          onNext();
         })
         .catch((error) => {
           console.error("Submission error", error);
@@ -91,7 +97,6 @@ export const PersonalDataTab: React.FC = (props) => {
   const handleShowBirthDateChange = (e: any) => {
     formik.setFieldValue("isHiddenBirthDate", e.target.checked);
 
-    // Если дата рождения не должна отображаться, очищаем значение поля даты
     if (!e.target.checked) {
       formik.setFieldValue("birthDate", "");
       formik.setFieldValue("isShowYearBirthDate", false);
@@ -102,9 +107,8 @@ export const PersonalDataTab: React.FC = (props) => {
     console.log(formik.values);
   }, [formik.values]);
 
-  // Handle the case where resumeContext is null
   if (!resumeContext) {
-    return <div>Loading...</div>; // or some fallback UI
+    return <div>Loading...</div>;
   }
 
   const normFile = (e: any) => {
@@ -135,7 +139,7 @@ export const PersonalDataTab: React.FC = (props) => {
 
   const maritalStatusOptions: { value: MaritalStatus; label: string }[] = [
     { value: MaritalStatus.Single, label: "Холост (не замужем)" },
-    { value: MaritalStatus.Single, label: "Женат (замужем)" },
+    { value: MaritalStatus.Married, label: "Женат (замужем)" },
     { value: MaritalStatus.Unspecified, label: "Не указано" },
   ];
 
@@ -203,11 +207,7 @@ export const PersonalDataTab: React.FC = (props) => {
 
       {/* Дата рождения */}
       <div className={cn(styles.inputGroup, styles.formField)}>
-        <div
-          className={cn(
-            styles.birthDayGroup,
-          )}
-        >
+        <div className={cn(styles.birthDayGroup)}>
           <label htmlFor="birthDate">Дата рождения</label>
           <div className={cn(styles.birthMargin)}>
             {!formik.values.isHiddenBirthDate && (
@@ -418,14 +418,17 @@ export const PersonalDataTab: React.FC = (props) => {
         </div>
       </div>
 
-      <Button
-        type="default"
-        htmlType="submit"
-        disabled={formik.isSubmitting}
-        className={styles.submitButton}
-      >
-        Продолжить
-      </Button>
+      <div className={styles.formActions}>
+        {onPrevious && <Button onClick={onPrevious}>Назад</Button>}
+        <Button
+          type="default"
+          htmlType="submit"
+          disabled={formik.isSubmitting}
+          className={styles.submitButton}
+        >
+          Продолжить
+        </Button>
+      </div>
     </form>
   );
 };

@@ -1,4 +1,4 @@
-type PersonalData = {
+export type PersonalData = {
   fatherName: string;
   lastName: string;
   firstName: string;
@@ -95,6 +95,7 @@ type ParamsData = {
 };
 
 export type ResumeData = {
+  id: string,
   personalData: PersonalData;
   wishesData: WishesData;
   experienceData: ExperienceData;

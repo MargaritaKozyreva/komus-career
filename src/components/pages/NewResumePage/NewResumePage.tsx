@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import styles from "./NewResumePage.module.scss";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
@@ -17,23 +16,15 @@ import { ResumeProvider } from "../../../entities/NewResume/ResumeContext";
 import { withLayout } from "../../layout/Layout";
 
 const NewResume = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const [lastTab, setLastTab] = useState("");
 
-  useEffect(() => {
-    return () => {
-      setLastTab(location.pathname);
-    };
-  }, [location]);
-
-  const handleGoBack = () => {
-    if (lastTab) {
-      navigate(lastTab);
-    } else {
-      navigate("/create-resume/personal-data");
-    }
-  };
+  const navigateToWishes = () => navigate(`/create-resume/wishes`);
+  const navigateToPersonalData = () => navigate(`/create-resume/personal-data`);
+  const navigateToExperience = () => navigate(`/create-resume/experience`);
+  const navigateToSkills = () => navigate(`/create-resume/skills`);
+  const navigateToEducation = () => navigate(`/create-resume/education`);
+  const navigateToParams = () => navigate(`/create-resume/params`);
+  const navigateToPreview = () => navigate(`/create-resume/preview`);
 
   return (
     <ResumeProvider>
@@ -102,19 +93,59 @@ const NewResume = () => {
           </div>
 
           <Routes>
-            <Route index element={<PersonalDataTab />} />
-            <Route path="personal-data" element={<PersonalDataTab />} />
+            <Route
+              index
+              element={<PersonalDataTab onNext={navigateToWishes} />}
+            />
+            <Route
+              path="personal-data"
+              element={<PersonalDataTab onNext={navigateToWishes} />}
+            />
             <Route
               path="wishes"
-              element={<WishesDataTab handleGoBack={handleGoBack} />}
+              element={
+                <WishesDataTab
+                  onNext={navigateToExperience}
+                  onPrevious={navigateToPersonalData}
+                />
+              }
             />
             <Route
               path="experience"
-              element={<ExperienceDataTab handleGoBack={handleGoBack} />}
+              element={
+                <ExperienceDataTab
+                  onNext={navigateToSkills}
+                  onPrevious={navigateToWishes}
+                />
+              }
             />
-            <Route path="skills" element={<SkillsDataTab />} />
-            <Route path="education" element={<EducationDataTab />} />
-            <Route path="params" element={<ParamsDataTab />} />
+            <Route
+              path="skills"
+              element={
+                <SkillsDataTab
+                  onNext={navigateToEducation}
+                  onPrevious={navigateToExperience}
+                />
+              }
+            />
+            <Route
+              path="education"
+              element={
+                <EducationDataTab
+                  onNext={navigateToParams}
+                  onPrevious={navigateToSkills}
+                />
+              }
+            />
+            <Route
+              path="params"
+              element={
+                <ParamsDataTab
+                  onNext={navigateToPreview}
+                  onPrevious={navigateToEducation}
+                />
+              }
+            />
             <Route path="preview" element={<PreviewDataTab />} />
           </Routes>
         </div>

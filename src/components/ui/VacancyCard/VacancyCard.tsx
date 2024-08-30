@@ -8,6 +8,7 @@ import starYellowSvg from "../../../assets/star-yellow.svg";
 
 import styles from "./VacancyCard.module.scss";
 import Spinner from "../Spinner";
+import { Link } from "react-router-dom";
 
 interface VacancyCardProps {
   vacancy: VacancyType;
@@ -57,7 +58,9 @@ export const VacancyCard: React.FC<VacancyCardProps> = ({ vacancy }) => {
         </div>
       </div>
 
-      <h3>{vacancy.title}</h3>
+      <h3>
+        <Link to={`/vacancy/${vacancy.id}`}>{vacancy.title}</Link>
+      </h3>
       <p className={styles.description}>{vacancy.description}</p>
       <div className={styles.footer}>
         <span className={styles.contractType}>{vacancy.contractType}</span>

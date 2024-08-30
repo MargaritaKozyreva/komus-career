@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { wishesDataModel } from "../../../../../entities/NewResume";
 import { AppDispatch } from "../../../../../state/store";
 import {
@@ -10,21 +10,23 @@ import {
   Schedule,
 } from "../../../../../types/newResume";
 import { Input } from "@komus/design";
-import { Button } from "antd";
+import { Button, Select } from "antd";
 
 import styles from "./WishesDataTab.module.scss";
 import cn from "classnames";
-import { Select } from "antd";
 import { useResume } from "../../../../../entities/NewResume/ResumeContext";
 
 type WishesDataTabProps = {
-  handleGoBack: () => void;
+  onNext: () => void;
+  onPrevious?: () => void;
 };
 
-export const WishesDataTab: React.FC<WishesDataTabProps> = (props) => {
+export const WishesDataTab: React.FC<WishesDataTabProps> = ({
+  onNext,
+  onPrevious,
+}) => {
   const dispatch: AppDispatch = useDispatch();
-  const navigate = useNavigate();
-  const resumeContext = useResume(); // Use the context hook
+  const resumeContext = useResume(); // Используем контекст
 
   const formik = useFormik<NewResumeWishesDataType>({
     initialValues: resumeContext
@@ -50,7 +52,7 @@ export const WishesDataTab: React.FC<WishesDataTabProps> = (props) => {
               },
             }));
           }
-          navigate("/create-resume/experience");
+          onNext(); // Переход к следующему табу
         })
         .catch((error) => {
           console.error("Submission error", error);
@@ -112,7 +114,7 @@ export const WishesDataTab: React.FC<WishesDataTabProps> = (props) => {
               label: option.label,
               value: option.value,
             }))}
-            value={formik.values.salaryCurrency} // bind the value to formik
+            value={formik.values.salaryCurrency}
           />
           <Select
             id="salaryPeriod"
@@ -123,7 +125,7 @@ export const WishesDataTab: React.FC<WishesDataTabProps> = (props) => {
               label: option.label,
               value: option.value,
             }))}
-            value={formik.values.salaryPeriod} // bind the value to formik
+            value={formik.values.salaryPeriod}
           />
         </div>
       </div>
@@ -150,7 +152,7 @@ export const WishesDataTab: React.FC<WishesDataTabProps> = (props) => {
             label: option.label,
             value: option.value,
           }))}
-          value={formik.values.employmentType} // bind the value to formik
+          value={formik.values.employmentType}
         />
       </div>
 
@@ -166,9 +168,7 @@ export const WishesDataTab: React.FC<WishesDataTabProps> = (props) => {
       </div>
 
       <div className={styles.formActions}>
-        <Button onClick={() => navigate("/create-resume/personal-data")}>
-          Назад
-        </Button>
+        {onPrevious && <Button onClick={onPrevious}>Назад</Button>}
         <Button htmlType="submit">Продолжить</Button>
       </div>
     </form>

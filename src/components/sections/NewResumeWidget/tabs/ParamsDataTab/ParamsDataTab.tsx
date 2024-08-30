@@ -11,12 +11,20 @@ import { useResume } from "../../../../../entities/NewResume/ResumeContext";
 
 import cn from "classnames";
 
+type ParamsDataTabProps = {
+  onNext: () => void;
+  onPrevious: () => void;
+};
+
 const { Option } = Select;
 
-export const ParamsDataTab: React.FC = () => {
+export const ParamsDataTab: React.FC<ParamsDataTabProps> = ({
+  onNext,
+  onPrevious,
+}) => {
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
-  const resumeContext = useResume(); // Use the context hook
+  const resumeContext = useResume(); 
 
   const formik = useFormik({
     initialValues: resumeContext
@@ -35,7 +43,7 @@ export const ParamsDataTab: React.FC = () => {
               paramsData: values,
             }));
           }
-          navigate("/create-resume/preview");
+          onNext();
         })
         .catch((error) => {
           console.error("Submission error", error);
@@ -93,7 +101,7 @@ export const ParamsDataTab: React.FC = () => {
 
         <div className={styles.formGroup}>
           <label>Видимость резюме</label>
-          <div style={{ marginBottom: '10px'}}></div>
+          <div style={{ marginBottom: "10px" }}></div>
           <Radio.Group
             name="resumeVisibility"
             onChange={formik.handleChange}
@@ -111,9 +119,7 @@ export const ParamsDataTab: React.FC = () => {
         </div>
 
         <div className={styles.formActions}>
-          <Button onClick={() => navigate("/create-resume/education")}>
-            Назад
-          </Button>
+          <Button onClick={onPrevious}>Назад</Button>
           <Button htmlType="submit">Продолжить</Button>
         </div>
       </form>

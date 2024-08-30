@@ -7,8 +7,8 @@ interface SearchBarProps {
   onSearch: (query: string) => void;
   color: string;
   widgetText?: string;
-  value?: string; // Управляемое свойство value
-  onChange?: (value: string) => void; // Функция для обработки изменений
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
 
